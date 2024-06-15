@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { FcGoogle } from "react-icons/fc";
 import { FaLinkedin } from "react-icons/fa";
+import { Link } from "react-router-dom";
 const LoginCard = () => {
   const[email,setEmail]=useState('')
   const[password,setPassword]=useState('')
@@ -10,9 +11,9 @@ const LoginCard = () => {
   }
   return (
     <>
-    <div className="flex flex-row justify-between">
+    <div className="flex flex-col lg:flex-row justify-between px-4 lg:px-8">
 
-      <div className="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8 w-[50%]">
+      <div className="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8 lg:w-[50%] w-full ">
         <div className="sm:mx-auto sm:w-full sm:max-w-sm  ">
           <h2 className="mt-10 text-center text-3xl font-bold leading-9 tracking-tight text-indigo-700  ">
             Sign in to your account
@@ -93,17 +94,21 @@ const LoginCard = () => {
 
           <p className="mt-10 text-center text-sm text-gray-500">
             Not a member?
+            <Link to={'/signup'}>
             <a
               href="#"
               className="font-semibold leading-6 text-indigo-600 hover:text-indigo-500"
               >
               Sign up Here
             </a>
+            </Link>
           </p>
         </div>
       </div>     
-      <div className="w-[50%] mt-8">
-        <img src="https://img.freepik.com/free-photo/e-commerce-digital-internet-technology-web-concept_53876-127365.jpg" alt="" />
+      <div className="hidden lg:block w-[50%]  relative">
+        <img className="rounded-lg absolute w-[90%] p-2" src="https://gearfiles.gsmcdn.com/wp-content/uploads/sites/15/2023/03/28022651/marketing-for-restaurants-food-ordering-1.png" alt="" />
+         <p className="relative p-4 text-xl  font-bold text-white font-playfair mt-1">Choose your best <span className="text-indigo-700">"Restaurant</span></p>
+        
         </div>  
               </div>
     </>
