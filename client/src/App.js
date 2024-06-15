@@ -1,11 +1,11 @@
 import React from 'react'
 import { Routes,Route } from 'react-router-dom'
-import Signup from './pages/signup'
+import SignIn from './pages/signin'
 const App = () => {
   return (
     <div>
         <Routes>
-          <Route exact path='/' element={<Signup/>}/>
+          <Route exact path='/' element={<SignIn/>}/>
         </Routes>
     </div>
   )
