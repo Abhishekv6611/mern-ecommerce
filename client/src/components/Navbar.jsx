@@ -1,7 +1,17 @@
 import React from 'react'
 import Logo from '../assests/logo_.png'
 import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
+
 const Navbar = () => {
+ const navigate=useNavigate()
+
+ function Navi(){
+  navigate('/addreview')
+ }
+
+
+
   return (
     <section id='navbar'>
 <nav className="bg-white border-gray-200 ">
@@ -19,10 +29,13 @@ const Navbar = () => {
     </div>
     <nav className="bg-white p-1">
   <div className="flex justify-center space-x-2 sm:space-x-4">
+    <Link to={'/toprated'}>
     <button className="bg-indigo-700 text-white text-base rounded-lg  p-2 hover:bg-white hover:text-black hover:border-black border border-transparent cursor-pointer">
       Top Rated
     </button>
-    <button className="bg-indigo-700 text-white text-base rounded-lg   p-2 hover:bg-white hover:text-black hover:border-black border border-transparent cursor-pointer">
+    </Link>
+
+    <button onClick={Navi} className="bg-indigo-700 text-white text-base rounded-lg   p-2 hover:bg-white hover:text-black hover:border-black border border-transparent cursor-pointer">
       Add Review
     </button>
     <button className="bg-indigo-700 text-white text-base rounded-lg   p-2 hover:bg-white hover:text-black hover:border-black border border-transparent cursor-pointer">
