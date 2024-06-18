@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import { FaLinkedin } from 'react-icons/fa'
 import { FcGoogle } from 'react-icons/fc'
-import { Link } from 'react-router-dom'
 
 const Signup = () => {
   const[email,setEmail]=useState('')
@@ -50,12 +49,12 @@ const Signup = () => {
                   Password
                 </label>
                 <div className="text-sm">
-                  <a
+                  <p
                     href="#"
                     className="font-semibold text-indigo-600 hover:text-indigo-500"
                   >
                     Forgot password?
-                  </a>
+                  </p>
                 </div>
               </div>
               <div className="mt-2">
@@ -81,12 +80,12 @@ const Signup = () => {
               <button
                 className=" rounded-md border border-gray-800 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm  hover:bg-slate-100"
                 >
-               <a href="" className="text-2xl"><FcGoogle /></a>
+               <a href="#" className="text-2xl"><FcGoogle /></a>
               </button>
               <button
                 className=" rounded-md border border-gray-800 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm  hover:bg-slate-100"
               >
-               <a href="" className="text-2xl text-cyan-600"><FaLinkedin/></a>
+               <a href="#" className="text-2xl text-cyan-600"><FaLinkedin/></a>
               </button>
               </div>
             </div>
@@ -94,15 +93,15 @@ const Signup = () => {
 
           <p className="mt-10 text-center text-sm text-gray-500">
            Already a member?
-           <Link to={'/'}>
+          
             <a
-              href="#"
+              href="/"
               className="font-semibold leading-6 text-indigo-600 hover:text-indigo-500"
               >
               Sign In Here
             </a>
            
-           </Link>
+          
           </p>
         </div>
       </div>      

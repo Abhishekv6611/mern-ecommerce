@@ -16,12 +16,12 @@ const Navbar = () => {
     <section id='navbar'>
 <nav className="bg-white border-gray-200 ">
     <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl p-4">
-        <a href="" className="flex items-center space-x-3 rtl:space-x-reverse">
+        <a href="/home" className="flex items-center space-x-3 rtl:space-x-reverse">
             <span className="self-center text-2xl font-semibold text-indigo-700 whitespace-nowrap">Dribble</span>
             <img src={Logo} className="w-16" alt="Flowbite Logo" />
         </a>
         <div className="flex items-center space-x-6 rtl:space-x-reverse">
-            <a className="text-lg text-indigo-700 ">Username</a>
+            <p className="text-lg text-indigo-700 ">Username</p>
            <Link to={'/'}>
            <p className="text-semibold  text-indigo-700 ">Login</p>
            </Link> 
@@ -38,12 +38,16 @@ const Navbar = () => {
     <button onClick={Navi} className="bg-indigo-700 text-white text-base rounded-lg   p-2 hover:bg-white hover:text-black hover:border-black border border-transparent cursor-pointer">
       Add Review
     </button>
+    <Link to={'/nearby'}>
     <button className="bg-indigo-700 text-white text-base rounded-lg   p-2 hover:bg-white hover:text-black hover:border-black border border-transparent cursor-pointer">
-      New Offer Spot
+      Near By
     </button>
+    </Link>
+    <Link to={'/topreview'}>
     <button className="bg-indigo-700 text-white text-base rounded-lg  p-2 hover:bg-white hover:text-black hover:border-black border border-transparent cursor-pointer">
-      Features
+      Top Review
     </button>
+    </Link>
   </div>
 </nav>
 </nav>

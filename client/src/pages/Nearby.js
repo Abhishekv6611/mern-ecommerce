@@ -2,11 +2,13 @@ import React from "react";
 import { PiBowlSteamFill } from "react-icons/pi";
 import { TfiComment } from "react-icons/tfi";
 import { FaLocationDot } from "react-icons/fa6";
-
+import { MdArrowBackIosNew } from "react-icons/md";
+import { Link } from "react-router-dom";
 const TopRated = () => {
   return (
     <section id="toprated" className="p-5"> 
-      <div className="flex flex-col md:flex-row p-2 mt-9">
+              <h1 className="text-3xl font-playfair font-bold px-3 flex items-center gap-2 mb-3"><Link to={'/home'}><p className="border rounded p-1 hover:bg-black hover:text-white  transition"><MdArrowBackIosNew /></p></Link>Near By</h1>
+              <div className="flex flex-col md:flex-row p-2 mt-9">
         <div className="h-full w-full md:w-1/2 transition-transform transform group-hover:scale-105">
           <img
             className="w-full h-full object-cover rounded-lg"

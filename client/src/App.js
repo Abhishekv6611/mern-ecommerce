@@ -6,6 +6,8 @@ import Home from './pages/Home'
 import Productid from './pages/Productid'
 import Review from './pages/Review'
 import Toprated from './pages/Toprated'
+import Nearby from './pages/Nearby'
+import TopReview from './pages/TopReview'
 const App = () => {
   return (
     <div>
@@ -16,6 +18,9 @@ const App = () => {
           <Route path='/product' element={<Productid/>}/>
           <Route path='/addreview' element={<Review/>}/>
           <Route path='/toprated' element={<Toprated/>}/>
+          <Route path='/nearby' element={<Nearby/>}/>
+          <Route path='/topreview' element={<TopReview/>}/>
+
 
 
 

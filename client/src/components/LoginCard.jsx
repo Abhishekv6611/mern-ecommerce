@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { FcGoogle } from "react-icons/fc";
 import { FaLinkedin } from "react-icons/fa";
-import { Link } from "react-router-dom";
 const LoginCard = () => {
   const[email,setEmail]=useState('')
   const[password,setPassword]=useState('')
@@ -50,12 +49,12 @@ const LoginCard = () => {
                   Password
                 </label>
                 <div className="text-sm">
-                  <a
-                    href="#"
+                  <p
+                  
                     className="font-semibold text-indigo-600 hover:text-indigo-500"
                   >
                     Forgot password?
-                  </a>
+                  </p>
                 </div>
               </div>
               <div className="mt-2">
@@ -81,12 +80,12 @@ const LoginCard = () => {
               <button
                 className=" rounded-md border border-gray-800 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm  hover:bg-slate-100"
                 >
-               <a href="" className="text-2xl"><FcGoogle /></a>
+               <p  className="text-2xl"><FcGoogle /></p>
               </button>
               <button
                 className=" rounded-md border border-gray-800 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm  hover:bg-slate-100"
               >
-               <a href="" className="text-2xl text-cyan-600"><FaLinkedin/></a>
+               <p href="" className="text-2xl text-cyan-600"><FaLinkedin/></p>
               </button>
               </div>
             </div>
@@ -94,14 +93,14 @@ const LoginCard = () => {
 
           <p className="mt-10 text-center text-sm text-gray-500">
             Not a member?
-            <Link to={'/signup'}>
+           
             <a
-              href="#"
+              href="/signup"
               className="font-semibold leading-6 text-indigo-600 hover:text-indigo-500"
               >
               Sign up Here
             </a>
-            </Link>
+          
           </p>
         </div>
       </div>     
