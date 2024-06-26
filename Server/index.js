@@ -1,18 +1,37 @@
-const express = require('express');
-const { PORT } = require('./config');
-const router = require('./router');
-const cors = require('cors');
+const express=require('express')
+require('dotenv').config()
+const UserModel = require('./Routes/UserModel');
+const bodyParser = require('body-parser');
+const mongoose=require('mongoose')
+const session = require('express-session')
+const MongoStore = require('connect-mongo');
 
-const app = express();
-app.use(cors());
-app.use(express.json());
-//Routing the admin and user 
-app.use(router);
+const cors = require('cors')
 
-app.get('/', (req, res) => {
-    res.send("Welcome to base router");
-});
+const app=express()
+app.use(cors())
 
-app.listen(PORT, () => {
-    console.log("Server is running on PORT:", PORT);
-});
+
+
+const PORT=process.env.PORT
+app.use(express.urlencoded({ extended: false }))
+app.use(express.json())
+mongoose.connect(process.env.MONGO_URL).then(()=>{
+    console.log('DB connected');
+})
+
+app.use(session({
+    secret: 'keyboard cat',
+    resave: false,
+    saveUninitialized: true,
+    store:MongoStore.create({mongoUrl:process.env.MONGO_URL, collectionName:'session'}),
+    cookie: { maxAge:1000*60*60*24 }
+  }))
+
+  app.use(UserModel)
+  
+  
+app.listen(PORT,()=>{
+    console.log("Port running on",PORT)
+})
+

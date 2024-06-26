@@ -2,6 +2,8 @@ import React from 'react'
 import Logo from '../assests/logo_.png'
 import { Link } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
+import { Menu, MenuButton, MenuItem, MenuItems, Transition } from '@headlessui/react'
+import { ChevronDownIcon } from '@heroicons/react/20/solid'
 
 const Navbar = () => {
  const navigate=useNavigate()
@@ -10,41 +12,99 @@ const Navbar = () => {
   navigate('/addreview')
  }
 
-
+ function classNames(...classes) {
+  return classes.filter(Boolean).join(' ')
+}
 
   return (
     <section id='navbar'>
 <nav className="bg-white border-gray-200 ">
     <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl p-4">
-        <a href="/home" className="flex items-center space-x-3 rtl:space-x-reverse">
-            <span className="self-center text-2xl font-semibold text-indigo-700 whitespace-nowrap">Dribble</span>
+        <a href="/" className="flex items-center space-x-3 rtl:space-x-reverse">
+            <span className="self-center text-2xl font-semibold text-black whitespace-nowrap">Dribble</span>
             <img src={Logo} className="w-16" alt="Flowbite Logo" />
         </a>
         <div className="flex items-center space-x-6 rtl:space-x-reverse">
-            <p className="text-lg text-indigo-700 ">Username</p>
-           <Link to={'/'}>
-           <p className="text-semibold  text-indigo-700 ">Login</p>
+           
+
+
+            {/* //dropbox */}
+            <Menu as="div" className="relative inline-block text-left">
+      <div>
+        <MenuButton className="inline-flex w-full justify-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50">
+         Username
+          <ChevronDownIcon className="-mr-1 h-5 w-5 text-gray-400" aria-hidden="true" />
+        </MenuButton>
+      </div>
+
+      <Transition
+        enter="transition ease-out duration-100"
+        enterFrom="transform opacity-0 scale-95"
+        enterTo="transform opacity-100 scale-100"
+        leave="transition ease-in duration-75"
+        leaveFrom="transform opacity-100 scale-100"
+        leaveTo="transform opacity-0 scale-95"
+      >
+        <MenuItems className="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+          <div className="py-1">
+            <MenuItem>
+              {({ focus }) => (
+                <a
+                  href="/account"
+                  className={classNames(
+                    focus ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
+                    'block px-4 py-2 text-sm',
+                  )}
+                >
+                  Account settings
+                </a>
+              )}
+            </MenuItem>
+            <form method="POST" action="#">
+              <MenuItem>
+                {({ focus }) => (
+                  <button
+                    type="submit"
+                    className={classNames(
+                      focus ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
+                      'block w-full px-4 py-2 text-left text-sm',
+                    )}
+                  >
+                    Sign out
+                  </button>
+                )}
+              </MenuItem>
+            </form>
+          </div>
+        </MenuItems>
+      </Transition>
+    </Menu>
+  {/* //dropboxend */}
+
+
+           <Link to={'/signin'}>
+           <p className="text-semibold  text-black ">Login</p>
            </Link> 
         </div>
     </div>
     <nav className="bg-white p-1">
   <div className="flex justify-center space-x-2 sm:space-x-4">
     <Link to={'/toprated'}>
-    <button className="bg-indigo-700 text-white text-base rounded-lg  p-2 hover:bg-white hover:text-black hover:border-black border border-transparent cursor-pointer">
+    <button className="bg-black text-white text-base rounded-lg  p-2 hover:bg-white hover:text-black hover:border-black border border-transparent cursor-pointer">
       Top Rated
     </button>
     </Link>
 
-    <button onClick={Navi} className="bg-indigo-700 text-white text-base rounded-lg   p-2 hover:bg-white hover:text-black hover:border-black border border-transparent cursor-pointer">
+    <button onClick={Navi} className="bg-black text-white text-base rounded-lg   p-2 hover:bg-white hover:text-black hover:border-black border border-transparent cursor-pointer">
       Add Review
     </button>
     <Link to={'/nearby'}>
-    <button className="bg-indigo-700 text-white text-base rounded-lg   p-2 hover:bg-white hover:text-black hover:border-black border border-transparent cursor-pointer">
+    <button className="bg-black text-white text-base rounded-lg   p-2 hover:bg-white hover:text-black hover:border-black border border-transparent cursor-pointer">
       Near By
     </button>
     </Link>
     <Link to={'/topreview'}>
-    <button className="bg-indigo-700 text-white text-base rounded-lg  p-2 hover:bg-white hover:text-black hover:border-black border border-transparent cursor-pointer">
+    <button className="bg-black text-white text-base rounded-lg  p-2 hover:bg-white hover:text-black hover:border-black border border-transparent cursor-pointer">
       Top Review
     </button>
     </Link>

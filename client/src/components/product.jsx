@@ -20,7 +20,7 @@ const Product = () => {
             <h1 className='text-lg font-semibold '>Liked: <span className='text-green-500'>150</span></h1>
             <h1 className='text-lg font-semibold'>Unliked: <span className='text-red-500'>50</span></h1>
           </div>
-          <p className='text-indigo-600 text-xl px-2 py-4 lg:py-8'>
+          <p className='text-indigo-600 text-xl  py-4 lg:py-8'>
             <span className='flex items-center'><FaLocationDot /> Location</span>
           </p>
           <div className='py-5'>
